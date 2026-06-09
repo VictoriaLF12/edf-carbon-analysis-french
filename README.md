@@ -1,14 +1,14 @@
 # EDF-Carbon-Analysis
 
-# EDF Carbon Emissions Analysis (2019–2024)
+# Analyse des émissions de CO₂ du groupe EDF (2019–2024)
 
 Projet d’analyse des émissions de CO₂ du groupe EDF par pays et par année, basé sur des données Open Data.
 
-## Executive Summary
+## Synthèse
 
 Ce projet analyse les émissions de CO₂ du groupe EDF sur la période 2019–2024 afin d’identifier les dynamiques de réduction carbone, la répartition géographique des émissions et les principaux contributeurs.
 
-### Key Insights
+### Résultats clés
 - Les émissions totales d’EDF diminuent d’environ 48 % sur la période 2019–2024
 - La France représente en moyenne 40 à 45 % des émissions totales du groupe
 - Les émissions sont fortement concentrées sur un nombre limité de pays
@@ -42,7 +42,7 @@ Ce projet a pour objectif de :
 
 ## 3. Import et structuration des données
 
-### Data Description
+### Description des données
 
 Source : Open Data EDF
 
