@@ -452,6 +452,8 @@ Cette section présente l’exploitation des données via Python afin de complé
 
 ### 6.2. Chargement des données (CSV)
 
+À l'issue des opérations de nettoyage et de normalisation réalisées sous PostgreSQL (contrôle des valeurs manquantes, des doublons, des incohérences de nommage et des valeurs aberrantes), la table finale a été exportée au format CSV. Ce fichier nettoyé a ensuite été utilisé dans Python afin de réaliser les visualisations et analyses exploratoires présentées dans cette section.
+
 ```python
 import pandas as pd
 
