@@ -449,27 +449,20 @@ Cette section présente l’exploitation des données via Python afin de complé
 | Outil | Utilisation |
 |------|------------|
 | Pandas | Manipulation et agrégation des données |
-| Sqlalchemy | Connexion à PostgreSQL |
 | Matplotlib | Visualisation des tendances |
 | Seaborn | Graphiques statistiques avancés |
 
-### 6.2. Connexion à la base PostgreSQL
+### 6.2. Chargement des données (CSV)
 
 ```python
 import pandas as pd
-from sqlalchemy import create_engine
 
-engine = create_engine("postgresql://username:password@localhost:5432/edf_db")
+df = pd.read_csv("emissions-de-co2-consolidees-par-pays-du-groupe-edf.csv")
 
-query = """
-SELECT *
-FROM edf_co2
-"""
-
-df = pd.read_sql(query, engine)
-
-df.head()
+print(df.head())
+print(df.columns)
 ```
+Objectif : vérifier que les données sont correctement chargées et comprendre la structure du dataset.
 
 ### 6.3. Évolution des émissions mondiales (2019–2024)
 
@@ -490,8 +483,7 @@ plt.xlabel("Année")
 plt.grid(True)
 plt.show()
 ```
-
-Visualisation claire de la tendance baissière globale déjà observée en SQL.
+Objectif : Cette visualisation met en évidence la tendance globale à la baisse des émissions sur la période étudiée.
 
 ### 6.4. Top pays émetteurs en 2024
 
@@ -508,17 +500,18 @@ plt.xlabel("ktonnes CO₂")
 plt.ylabel("")
 plt.show()
 ```
-
-Confirme la concentration géographique des émissions sur quelques pays clés.
+Objectif : Cette analyse montre la concentration des émissions sur un nombre limité de pays.
 
 ### 6.5. Part de la France dans les émissions mondiales
 
 ```python
 fr_world = df[df["Périmètre spatial"].isin(["France", "Monde"])]
 
-pivot = fr_world.pivot(index="Année",
-                       columns="Périmètre spatial",
-                       values="Emissions CO2").reset_index()
+pivot = fr_world.pivot_table(
+    index="Année",
+    columns="Périmètre spatial",
+    values="Emissions CO2"
+).reset_index()
 
 pivot["Part France (%)"] = (pivot["France"] / pivot["Monde"]) * 100
 
@@ -527,20 +520,22 @@ sns.lineplot(data=pivot, x="Année", y="Part France (%)", marker="o")
 
 plt.title("Part des émissions françaises dans le total EDF")
 plt.ylabel("%")
+plt.xlabel("Année")
 plt.grid(True)
 plt.show()
 ```
 
-Permet de visualiser la stabilité du poids de la France (~40–45%).
+Objectif : Cette visualisation permet d’observer la stabilité du poids de la France dans les émissions globales du groupe EDF.
 
 ### 6.6. Répartition des émissions par pays (moyenne 2019–2024)
 
 ```python
-avg_country = df[df["Périmètre spatial"] != "Monde"] \
-    .groupby("Périmètre spatial")["Emissions CO2"] \
-    .mean() \
-    .sort_values(ascending=False) \
-    .head(10)
+avg_country = (
+    df[df["Périmètre spatial"] != "Monde"]
+    .groupby("Périmètre spatial")["Emissions CO2"]
+    .mean()
+    .sort_values(ascending=False)
+    .head(10))
 
 plt.figure(figsize=(10,6))
 avg_country.plot(kind="bar")
@@ -551,26 +546,26 @@ plt.xlabel("")
 plt.xticks(rotation=45)
 plt.show()
 ```
+Objectif : Cette analyse met en évidence les pays structurellement les plus émetteurs sur la période.
 
-Met en évidence les pays structurellement les plus émetteurs.
-
-### 6.7. Heatmap des émissions par pays et année (bonus très portfolio-friendly)
+### 6.7. Heatmap des émissions par pays et année
 
 ```python
-pivot_heatmap = df[df["Périmètre spatial"] != "Monde"] \
-    .pivot_table(index="Périmètre spatial",
-                 columns="Année",
-                 values="Emissions CO2",
-                 aggfunc="sum")
+pivot_heatmap = df[df["Périmètre spatial"] != "Monde"].pivot_table(
+    index="Périmètre spatial",
+    columns="Année",
+    values="Emissions CO2",
+    aggfunc="sum")
 
 plt.figure(figsize=(12,8))
 sns.heatmap(pivot_heatmap, cmap="Reds")
 
 plt.title("Heatmap des émissions CO₂ EDF par pays et année")
+plt.xlabel("Année")
+plt.ylabel("Pays")
 plt.show()
 ```
-
-Permet de visualiser rapidement les zones géographiques les plus intensives.
+Objectif : Cette heatmap permet de visualiser rapidement les zones géographiques les plus intensives en émissions.
 
 ### 7. Export des résultats analytiques
 
@@ -578,6 +573,8 @@ Permet de visualiser rapidement les zones géographiques les plus intensives.
 world_yearly.to_csv("world_emissions_trend.csv", index=False)
 top_countries.to_csv("top_countries_2024.csv", index=False)
 ```
+Objectif : sauvegarder les résultats pour une réutilisation ou un dashboard.
+
 ---
 
 ## 7. Conclusion générale
