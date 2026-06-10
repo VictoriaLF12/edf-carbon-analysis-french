@@ -442,6 +442,143 @@ LIMIT 10;
 
 ## 6. Visualisations Python
 
+Cette section présente l’exploitation des données via Python afin de compléter les analyses SQL avec des visualisations dynamiques et une analyse exploratoire des émissions de CO₂ du groupe EDF.
+
+### 6.1. Stack Python utilisée
+
+| Outil | Utilisation |
+|------|------------|
+| Pandas | Manipulation et agrégation des données |
+| Sqlalchemy | Connexion à PostgreSQL |
+| Matplotlib | Visualisation des tendances |
+| Seaborn | Graphiques statistiques avancés |
+
+### 6.2. Connexion à la base PostgreSQL
+
+```python
+import pandas as pd
+from sqlalchemy import create_engine
+
+Connexion PostgreSQL
+engine = create_engine("postgresql://username:password@localhost:5432/edf_db")
+
+query = """
+SELECT *
+FROM edf_co2
+"""
+
+df = pd.read_sql(query, engine)
+
+df.head()
+```
+
+### 6.3. Évolution des émissions mondiales (2019–2024)
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+world = df[df["Périmètre spatial"] == "Monde"]
+
+world_yearly = world.groupby("Année")["Emissions CO2"].sum().reset_index()
+
+plt.figure(figsize=(10,5))
+sns.lineplot(data=world_yearly, x="Année", y="Emissions CO2", marker="o")
+
+plt.title("Évolution des émissions CO₂ mondiales EDF (2019–2024)")
+plt.ylabel("ktonnes CO₂")
+plt.xlabel("Année")
+plt.grid(True)
+plt.show()
+```
+
+Visualisation claire de la tendance baissière globale déjà observée en SQL.
+
+### 6.4. Top pays émetteurs en 2024
+
+```python
+df_2024 = df[(df["Année"] == 2024) & (df["Périmètre spatial"] != "Monde")]
+
+top_countries = df_2024.sort_values("Emissions CO2", ascending=False).head(10)
+
+plt.figure(figsize=(10,5))
+sns.barplot(data=top_countries, y="Périmètre spatial", x="Emissions CO2")
+
+plt.title("Top 10 pays émetteurs EDF en 2024")
+plt.xlabel("ktonnes CO₂")
+plt.ylabel("")
+plt.show()
+```
+
+Confirme la concentration géographique des émissions sur quelques pays clés.
+
+### 6.5. Part de la France dans les émissions mondiales
+
+```python
+fr_world = df[df["Périmètre spatial"].isin(["France", "Monde"])]
+
+pivot = fr_world.pivot(index="Année",
+                       columns="Périmètre spatial",
+                       values="Emissions CO2").reset_index()
+
+pivot["Part France (%)"] = (pivot["France"] / pivot["Monde"]) * 100
+
+plt.figure(figsize=(10,5))
+sns.lineplot(data=pivot, x="Année", y="Part France (%)", marker="o")
+
+plt.title("Part des émissions françaises dans le total EDF")
+plt.ylabel("%")
+plt.grid(True)
+plt.show()
+```
+
+Permet de visualiser la stabilité du poids de la France (~40–45%).
+
+### 6.6. Répartition des émissions par pays (moyenne 2019–2024)
+
+```python
+avg_country = df[df["Périmètre spatial"] != "Monde"] \
+    .groupby("Périmètre spatial")["Emissions CO2"] \
+    .mean() \
+    .sort_values(ascending=False) \
+    .head(10)
+
+plt.figure(figsize=(10,6))
+avg_country.plot(kind="bar")
+
+plt.title("Émissions moyennes par pays (2019–2024)")
+plt.ylabel("ktonnes CO₂")
+plt.xlabel("")
+plt.xticks(rotation=45)
+plt.show()
+```
+
+Met en évidence les pays structurellement les plus émetteurs.
+
+### 6.7. Heatmap des émissions par pays et année (bonus très portfolio-friendly)
+
+```python
+pivot_heatmap = df[df["Périmètre spatial"] != "Monde"] \
+    .pivot_table(index="Périmètre spatial",
+                 columns="Année",
+                 values="Emissions CO2",
+                 aggfunc="sum")
+
+plt.figure(figsize=(12,8))
+sns.heatmap(pivot_heatmap, cmap="Reds")
+
+plt.title("Heatmap des émissions CO₂ EDF par pays et année")
+plt.show()
+```
+
+Permet de visualiser rapidement les zones géographiques les plus intensives.
+
+### 7. Export des résultats analytiques
+
+```python
+world_yearly.to_csv("world_emissions_trend.csv", index=False)
+top_countries.to_csv("top_countries_2024.csv", index=False)
+```
 ---
 
 ## 7. Conclusion générale
