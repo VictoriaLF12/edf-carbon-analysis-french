@@ -482,7 +482,7 @@ plt.grid(True)
 plt.show()
 ```
 Objectif : Cette visualisation met en évidence la tendance globale à la baisse des émissions sur la période étudiée.
-![Évolution des émissions mondiales](visuals/global_co2_trend.png)
+![Évolution des émissions mondiales](visuals/Global_CO2_Emissions_Trend.png)
 
 ### 6.4. Top pays émetteurs en 2024
 
@@ -500,7 +500,7 @@ plt.ylabel("")
 plt.show()
 ```
 Objectif : Cette analyse montre la concentration des émissions sur un nombre limité de pays.
-![Top pays émetteurs 2024](visuals/top_countries_2024.png)
+![Top pays émetteurs 2024](visuals/Top_CO2_Emitting_Countries_2024.png)
 
 ### 6.5. Part de la France dans les émissions mondiales
 
@@ -526,7 +526,7 @@ plt.show()
 ```
 
 Objectif : Cette visualisation permet d’observer la stabilité du poids de la France dans les émissions globales du groupe EDF.
-![Part de la France dans les émissions](visuals/france_share.png)
+![Part de la France dans les émissions](visuals/Average_CO2_Emissions_By_Country.png)
 
 ### 6.6. Répartition des émissions par pays (moyenne 2019–2024)
 
@@ -548,7 +548,7 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 Objectif : Cette analyse met en évidence les pays structurellement les plus émetteurs sur la période.
-![Émissions moyennes par pays](visuals/avg_emissions_country.png)
+![Émissions moyennes par pays](visuals/CO2_Emissions_Heatmap.png)
 
 ### 6.7. Heatmap des émissions par pays et année
 
