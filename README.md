@@ -254,7 +254,6 @@ Cela peut entraîner des doublons dans les analyses, des moyennes incorrectes et
 Une opération de normalisation des données a été réalisée afin d’unifier les libellés.
 
 ```sql
-Requête SQL
 UPDATE edf_co2
 SET "Périmètre spatial" = 'République populaire de Chine'
 WHERE "Périmètre spatial" = 'République Populaire de Chine';
@@ -265,7 +264,6 @@ WHERE "Périmètre spatial" = 'République Populaire de Chine';
 Une nouvelle vérification des valeurs distinctes a été effectuée afin de confirmer la cohérence des données.
 
 ```sql
-Requête SQL
 SELECT DISTINCT "Périmètre spatial"
 FROM edf_co2
 ORDER BY "Périmètre spatial";
