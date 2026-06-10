@@ -526,7 +526,7 @@ plt.show()
 ```
 
 Objectif : Cette visualisation permet d’observer la stabilité du poids de la France dans les émissions globales du groupe EDF.
-![Part de la France dans les émissions](visuals/Average_CO2_Emissions_By_Country.png)
+![Part de la France dans les émissions](visuals/France_Share_of_Global_Emissions.png)
 
 ### 6.6. Répartition des émissions par pays (moyenne 2019–2024)
 
@@ -548,7 +548,7 @@ plt.xticks(rotation=45)
 plt.show()
 ```
 Objectif : Cette analyse met en évidence les pays structurellement les plus émetteurs sur la période.
-![Émissions moyennes par pays](visuals/CO2_Emissions_Heatmap.png)
+![Émissions moyennes par pays](visuals/Average_CO2_Emissions_By_Country.png)
 
 ### 6.7. Heatmap des émissions par pays et année
 
@@ -568,7 +568,7 @@ plt.ylabel("Pays")
 plt.show()
 ```
 Objectif : Cette heatmap permet de visualiser rapidement les zones géographiques les plus intensives en émissions.
-![Heatmap des émissions CO₂](visuals/heatmap_co2.png)
+![Heatmap des émissions CO₂](visuals/CO2_Emissions_Heatmap.png)
 
 ### 7. Export des résultats analytiques
 
