@@ -459,7 +459,6 @@ Cette section présente l’exploitation des données via Python afin de complé
 import pandas as pd
 from sqlalchemy import create_engine
 
-Connexion PostgreSQL
 engine = create_engine("postgresql://username:password@localhost:5432/edf_db")
 
 query = """
