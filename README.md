@@ -431,13 +431,17 @@ ORDER BY "Année";
 
 #### Interprétation des résultats
 
-L’analyse de l’évolution des émissions de CO₂ du groupe EDF entre 2019 et 2024 met en évidence une tendance globale fortement baissière, avec une réduction d’environ 48 % sur la période étudiée.
-Cette diminution n’est pas linéaire. Après une forte baisse entre 2019 et 2020, les émissions se stabilisent légèrement en 2021 avant de reprendre une trajectoire descendante plus marquée à partir de 2022.
-L’année 2023 constitue le point le plus significatif de cette dynamique avec une baisse de près de 21 %, traduisant une accélération des efforts de réduction des émissions.
-En 2024, la baisse se poursuit mais à un rythme plus modéré, suggérant une phase de consolidation des gains environnementaux.
+L’analyse de l’évolution des émissions de CO₂ du groupe EDF entre 2019 et 2024 met en évidence une tendance baissière continue sur l’ensemble de la période. Les émissions du périmètre mondial passent de 32 248,80 ktonnes de CO₂ en 2019 à 16 095,64 ktonnes en 2024, soit une réduction globale d’environ 50,1 %.
+
+Cette diminution n’est toutefois pas uniforme d’une année à l’autre. La première baisse importante est observée entre 2019 et 2020 (-16,53 %). En 2021, les émissions se stabilisent avec une variation limitée à -1,18 %. À partir de 2022, la réduction s’accélère de nouveau avec une baisse de -13,24 %, suivie de la diminution la plus marquée de la période en 2023 (-20,93 %). En 2024, les émissions poursuivent leur recul avec une baisse supplémentaire de -11,80 %.
+
+Ces résultats mettent en évidence une réduction progressive et durable des émissions de CO₂ du groupe EDF sur la période étudiée, avec une accélération notable de la baisse à partir de 2022.
 
 #### Conclusion
-Sur la période étudiée, EDF présente une trajectoire de réduction carbone nette et structurée, avec une accélération des efforts à partir de 2022. Cette évolution peut être interprétée comme le résultat combiné de politiques de transition énergétique, d’optimisation des opérations et de transformation progressive du mix énergétique du groupe.
+
+Sur la période 2019–2024, les données montrent une trajectoire de réduction carbone nette et continue pour le groupe EDF. Les émissions mondiales ont été divisées par deux en six ans, passant de 32 248,80 à 16 095,64 ktonnes de CO₂. Après une phase de relative stabilité en 2021, la baisse des émissions s’intensifie à partir de 2022, avec un point particulièrement marqué en 2023.
+
+L’analyse met ainsi en évidence une amélioration continue de la performance carbone du groupe sur la période étudiée. Toutefois, les données disponibles ne permettent pas d’identifier précisément les facteurs opérationnels ou stratégiques à l’origine de cette évolution. Cette analyse doit donc être interprétée comme une observation des tendances d’émissions déclarées plutôt que comme une explication de leurs causes.
 
 ### 5.6. Top 10 des pays les plus émetteurs sur la période 2019–2024 (émissions cumulées)
 
