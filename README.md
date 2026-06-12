@@ -319,7 +319,7 @@ ORDER BY "Année";
 
 On observe une réduction progressive et continue des émissions de CO₂ sur l’ensemble de la période.
 
-Cette évolution peut s’expliquer par des politiques de réduction des émissions et le renforcement des obligations de reporting carbone.
+Les causes de cette évolution ne peuvent pas être déterminées à partir du dataset seul. Nous pouvons émettre l'hypothèse que le renforcement des politiques de réduction des émissions ainsi que l'accroissement des obligations de reporting carbone conduiront les entreprises à intensifier leurs efforts de décarbonation et à améliorer leurs dispositifs de mesure et de divulgation des performances environnementales.
 
 #### Conclusion
 
@@ -416,15 +416,13 @@ ORDER BY AVG("Emissions CO2") DESC;
 #### Requêtes SQL principales
 Quelles sont les variations annuelles des émissions de CO₂ du groupe EDF ?
 ```sql
-SELECT 
+SELECT
     "Année",
-    ROUND(SUM("Emissions CO2")::numeric,2) AS emissions_totales,
-
-    ROUND(((SUM("Emissions CO2")
-	        - LAG(SUM("Emissions CO2"))OVER (ORDER BY "Année"))
-			/LAG(SUM("Emissions CO2"))OVER (ORDER BY "Année"))::numeric * 100,2) AS variation_pct
+    ROUND("Emissions CO2"::numeric, 2) AS emissions_totales,
+    ROUND((("Emissions CO2"- LAG("Emissions CO2") OVER (ORDER BY "Année"))
+            /LAG("Emissions CO2") OVER (ORDER BY "Année")* 100)::numeric,2) AS variation_pct
 FROM edf_co2
-GROUP BY "Année"
+WHERE "Périmètre spatial" = 'Monde'
 ORDER BY "Année";
 ```
 
