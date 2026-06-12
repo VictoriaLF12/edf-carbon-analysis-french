@@ -72,6 +72,13 @@ CREATE TABLE edf_co2 (
 );
 
 ```
+
+### Remarque sur le périmètre de consolidation
+
+Le périmètre “Monde” correspond à une consolidation en intégration globale des entités du groupe EDF.
+Les données par pays correspondent à une ventilation géographique des émissions selon le périmètre disponible dans le jeu de données.
+Ces deux niveaux de données étant construits selon des logiques différentes, ils ne constituent pas une décomposition strictement additive.
+
 ### Preuves d’exécution (PostgreSQL)
 
 #### Création de la table
