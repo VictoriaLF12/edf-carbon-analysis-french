@@ -79,6 +79,8 @@ Le périmètre “Monde” correspond à une consolidation en intégration globa
 Les données par pays correspondent à une ventilation géographique des émissions selon le périmètre disponible dans le jeu de données.
 Ces deux niveaux de données étant construits selon des logiques différentes, ils ne constituent pas une décomposition strictement additive.
 
+![World Emissions vs Sum of Countries Check](visuals/world_vs_countries_check.png)
+
 ### Preuves d’exécution (PostgreSQL)
 
 #### Création de la table
