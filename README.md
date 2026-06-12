@@ -9,11 +9,10 @@ Projet d’analyse des émissions de CO₂ du groupe EDF par pays et par année,
 Ce projet analyse les émissions de CO₂ du groupe EDF sur la période 2019–2024 afin d’identifier les dynamiques de réduction carbone, la répartition géographique des émissions et les principaux contributeurs.
 
 ### Résultats clés
-- Les émissions totales d’EDF diminuent d’environ 48 % sur la période 2019–2024
-- La France représente en moyenne 40 à 45 % des émissions totales du groupe
+- Les émissions totales d’EDF diminuent d’environ 50,1 % sur la période 2019–2024
+- La France représente entre 40 % et 45 % des émissions du groupe selon les années.
 - Les émissions sont fortement concentrées sur un nombre limité de pays
 - Une accélération de la baisse est observée à partir de 2022
-- La trajectoire globale suggère une transition progressive vers un mix énergétique moins carboné
 
 ---
 
@@ -36,7 +35,7 @@ Ce projet a pour objectif de :
 | PostgreSQL | Stockage et requêtes sur les données |
 | SQL | Analyse et exploration des données |
 | Python | Visualisation des données |
-| GitHub | Versioning et portfolio |
+| GitHub | Gestion de version et hébergement du portfolio |
 
 ---
 
@@ -394,8 +393,6 @@ Les émissions mondiales du groupe passent d’environ 32 249 en 2019 à 16 096 
 Malgré cette diminution, la France conserve un poids important dans les émissions totales du groupe. En moyenne, elle représente entre 40 % et 45 % des émissions mondiales d’EDF sur la période étudiée.
 
 Cette concentration peut s’expliquer par l’importance historique du marché français pour EDF, la taille des infrastructures énergétiques nationales et la centralisation d’une partie importante des activités du groupe en France.
-
-Les résultats suggèrent également qu’EDF a engagé une trajectoire globale de réduction carbone entre 2019 et 2024, potentiellement liée aux politiques de transition énergétique, à l’évolution du mix énergétique, à la fermeture progressive de certaines activités fortement émettrices ou à l’amélioration des performances environnementales.
 
 ### 5.4. Émissions moyennes par pays
 
