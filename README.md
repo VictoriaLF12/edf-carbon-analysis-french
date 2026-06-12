@@ -351,7 +351,7 @@ L’analyse des émissions de CO₂ du groupe EDF en 2024 met en évidence une f
 
 La France apparaît comme le principal contributeur avec plus de 7 293 unités d’émissions, suivie par l’Italie et la Chine. Cette répartition reflète l’importance historique des activités du groupe EDF en Europe ainsi que sa présence internationale sur plusieurs marchés énergétiques.
 
-Les émissions élevées observées en Italie et en Chine peuvent s’expliquer par une présence industrielle importante, des infrastructures énergétiques plus carbonées ou des mix énergétiques nationaux davantage dépendants des énergies fossiles.
+Les émissions élevées observées en Italie et en Chine indiquent une contribution importante de ces pays aux émissions du groupe EDF. Les causes précises nécessiteraient des données opérationnelles complémentaires.
 
 À l’inverse, certains pays comme le Royaume-Uni, le Canada ou l’Inde présentent des niveaux d’émissions très faibles dans le périmètre EDF, ce qui peut traduire une présence plus limitée du groupe, des activités moins intensives en carbone ou un portefeuille énergétique davantage orienté vers des énergies bas carbone.
 
