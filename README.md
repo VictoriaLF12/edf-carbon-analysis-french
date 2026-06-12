@@ -448,10 +448,13 @@ L’analyse met ainsi en évidence une amélioration continue de la performance 
 #### Requêtes SQL principales
 Quels pays concentrent le plus d’émissions cumulées sur l’ensemble de la période 2019–2024 ?
 ```sql
-SELECT "Périmètre spatial", SUM("Emissions CO2")
+SELECT
+    "Périmètre spatial",
+    ROUND(SUM("Emissions CO2")::numeric,2) AS emissions_cumulees
 FROM edf_co2
+WHERE "Périmètre spatial" <> 'Monde'
 GROUP BY "Périmètre spatial"
-ORDER BY SUM("Emissions CO2") DESC
+ORDER BY emissions_cumulees DESC
 LIMIT 10;
 ```
 #### Preuves d’exécution (PostgreSQL)
