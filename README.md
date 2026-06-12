@@ -293,7 +293,7 @@ ORDER BY "Périmètre spatial";
 #### Conclusion
 
 Cette étape de nettoyage a permis d’améliorer la qualité et la fiabilité des analyses réalisées dans le projet.
-Elle illustre également l’importance de la préparation des données dans une démarche de data analyse appliquée aux données ESG et environnementales.
+Elle illustre également l’importance de la préparation des données dans une démarche d'analyse de données appliquée aux données ESG et environnementales.
 
 ---
 
@@ -607,6 +607,6 @@ Ce projet d’analyse des émissions carbone du groupe EDF met en évidence une 
 
 Les analyses réalisées montrent que les émissions sont fortement concentrées sur quelques pays clés, la France représente une part importante des émissions totales du groupe et que les émissions mondiales suivent une trajectoire baissière progressive sur la période étudiée.
 
-Ce projet illustre également l’utilisation combinée de PostgreSQL, SQL et Python dans une démarche complète de data analyse appliquée aux enjeux ESG et climatiques.
+Ce projet illustre également l’utilisation combinée de PostgreSQL, SQL et Python dans une démarche complète d'analyse de données appliquée aux enjeux ESG et climatiques.
 
 Au-delà des résultats techniques, cette étude permet de mieux comprendre la répartition géographique des émissions carbone et les dynamiques de transition énergétique au sein d’un grand groupe international.
