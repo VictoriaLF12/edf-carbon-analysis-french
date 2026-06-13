@@ -403,8 +403,8 @@ SELECT "Périmètre spatial", AVG("Emissions CO2")
 FROM edf_co2
 GROUP BY "Périmètre spatial"
 ORDER BY AVG("Emissions CO2") DESC;
-
 ```
+
 #### Preuves d’exécution (PostgreSQL)
 ![Average CO2 Emissions by Country](visuals/emissions_moyennes_par_pays.png)
 
@@ -593,7 +593,7 @@ plt.show()
 Objectif : Cette heatmap permet de visualiser rapidement les zones géographiques les plus intensives en émissions.
 ![Heatmap des émissions CO₂](visuals/CO2_Emissions_Heatmap.png)
 
-### 7. Export des résultats analytiques
+### 6.8. Export des résultats analytiques
 
 ```python
 world_yearly.to_csv("world_emissions_trend.csv", index=False)
